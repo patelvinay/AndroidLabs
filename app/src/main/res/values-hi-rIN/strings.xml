@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android Labs</string>
-    <string name="hello_message">नमस्ते दुनिया!</string>
-    <string name="ButtonText">मैं बटन हूँ</string>
+    <string name="widgets">यहाँ मेरे विजेट हैं:</string>
+    <string name="ButtonText">बटन</string>
+    <string name="check">इसकी जांच करें!</string>
+    <string name="Switch">चालू करना / बंद करना</string>
+    <string name="hint">अपना उत्तर यहां लिखें</string>
 </resources>
