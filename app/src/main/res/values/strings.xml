@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">Android Labs</string>
-    <string name="hello_message">Hello World!</string>
-    <string name="ButtonText">I\’m a button</string>
+    <string name="widgets">Here are my widgets:</string>
+    <string name="ButtonText">Login</string>
+    <string name="check">Check this out!</string>
+    <string name="Switch">Switch on / off</string>
+    <string name="hint">Type your answer here</string>
+
+    //** lab3 **//
+
+    <string name="email">Enter you email address:</string>
+    <string name="temail">Type email here</string>
+    <string name="pass">Type your password:</string>
+    <string name="profile">Your profile</string>
+    <string name="name">Your name:</string>
+    <string name="hname">Enter your name</string>
+    <string name="yemail">Your email:</string>
+    <string name="eemail">Enter your email</string>
+    <string name="pic">your picture:</string>
+    <string name="click">Click the button above to take a picture</string>
 </resources>

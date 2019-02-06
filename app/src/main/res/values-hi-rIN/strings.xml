@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android Labs</string>
-    <string name="hello_message">नमस्ते दुनिया!</string>
-    <string name="ButtonText">मैं बटन हूँ</string>
+    <string name="widgets">यहाँ मेरे विजेट हैं:</string>
+    <string name="ButtonText">बटन</string>
+    <string name="check">इसकी जांच करें!</string>
+    <string name="Switch">चालू करना / बंद करना</string>
+    <string name="hint">अपना उत्तर यहां लिखें</string>
+
+    //** lab3 **//
+
+    <string name="email">" आपको ईमेल पता दर्ज करें:"</string>
+    <string name="temail">" यहां ईमेल टाइप करें"</string>
+    <string name="pass">\nअपना पासवर्ड लिखें:</string>
+    <string name="profile">आपकी रूपरेखा</string>
+    <string name="name">" आपका नाम:"</string>
+    <string name="hname">अपना नाम दर्ज करें</string>
+    <string name="yemail">" तुम्हारा ईमेल:"</string>
+    <string name="eemail">अपना ईमेल दर्ज करें</string>
+    <string name="pic">" आपकी तस्वीर:"</string>
+    <string name="click">" तस्वीर लेने के लिए ऊपर दिए गए बटन पर क्लिक करें"</string>
 </resources>
