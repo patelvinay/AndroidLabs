@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:gravity="fill"
-    android:orientation="vertical">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/emailtext"
+        android:id="@+id/Lab3TextView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/Lab3TextView1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"/>
 
-        android:text="@string/email"
-        android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/Lab3editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/temail"
+        android:ems="10"
         android:inputType="textEmailAddress"
-        android:textSize="20dp" />
-
-
-    <TextView
-        android:id="@+id/password_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pass"
-        android:textSize="20dp" />
-
-
-    <EditText
-        android:id="@+id/pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:textSize="20dp"
-
+        android:hint="@string/Lab3EmailHint"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Lab3TextView1"
         />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/Lab3textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonText"
-        android:textSize="20dp" />
+        android:text="@string/Lab3TextView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Lab3editText2"/>
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/Lab3editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Lab3textView2"
+        />
+    <Button
+        android:id="@+id/Lab3LoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Lab3editText3"
+        android:text="@string/Lab3LoginBtnText"
+        />
+
+</RelativeLayout>

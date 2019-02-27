@@ -1,22 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Android Labs</string>
-    <string name="widgets">यहाँ मेरे विजेट हैं:</string>
-    <string name="ButtonText">बटन</string>
-    <string name="check">इसकी जांच करें!</string>
-    <string name="Switch">चालू करना / बंद करना</string>
-    <string name="hint">अपना उत्तर यहां लिखें</string>
+    <string name="app_name">AndroidLabs</string>
+    <string name="hello_message">Hello World</string>
+    <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonText2">Button</string>
+    <string name="CheckBoxText">Check this out!</string>
+    <string name="SwitchText">Switch on / off</string>
+    <string name="EditText">Type your answer here</string>
+    <string name="TextViewText">Here are my widgets:</string>
+    <string name="Lab3TextView1">Enter your email address:</string>
+    <string name="Lab3TextView2">Enter your password:</string>
+    <string name="Lab3EmailHint">Type email here:</string>
+    <string name="Lab3LoginBtnText">Login</string>
+    <string name="ProfileText">Your profile</string>
+    <string name="NameText">Your name:</string>
+    <string name="NameHintText">Enter your name</string>
+    <string name="EmailTextViewText">Your email:</string>
+    <string name="EmailHintText">Enter your email</string>
+    <string name="PictureTextView">Your picture:</string>
+    <string name="ImagePictureTextView">Click the button above to take a picture</string>
+    <string name="GoToChatText">Go To Chat</string>
+    <string name="SendText">Send</string>
+    <string name="ReceiveText">Receive</string>
+    <string name="ChatHint">Type here</string>
 
-    //** lab3 **//
-
-    <string name="email">" आपको ईमेल पता दर्ज करें:"</string>
-    <string name="temail">" यहां ईमेल टाइप करें"</string>
-    <string name="pass">\nअपना पासवर्ड लिखें:</string>
-    <string name="profile">आपकी रूपरेखा</string>
-    <string name="name">" आपका नाम:"</string>
-    <string name="hname">अपना नाम दर्ज करें</string>
-    <string name="yemail">" तुम्हारा ईमेल:"</string>
-    <string name="eemail">अपना ईमेल दर्ज करें</string>
-    <string name="pic">" आपकी तस्वीर:"</string>
-    <string name="click">" तस्वीर लेने के लिए ऊपर दिए गए बटन पर क्लिक करें"</string>
 </resources>

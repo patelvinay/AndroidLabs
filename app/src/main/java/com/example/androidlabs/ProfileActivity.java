@@ -1,75 +1,95 @@
 package com.example.androidlabs;
 
+
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.provider.MediaStore;
 
 public class ProfileActivity extends AppCompatActivity {
-    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
-    ImageButton takePicture;
+
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    ImageButton takePictureBtn;
+    Button goToChatBtn;
+    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        //get Intent from MainActivity
+
+        // get the intent that got us here
         Intent loginPage = getIntent();
-        String emailType = loginPage.getStringExtra("emailType");
-        EditText enterEmail = (EditText)findViewById(R.id.email);
-        enterEmail.setText(emailType);
-        takePicture = (ImageButton)findViewById(R.id.picture);
-        takePicture.setOnClickListener(c -> {
+
+        String emailTyped = loginPage.getStringExtra("emailTyped");
+
+        //Put the string that was sent from FirstActivity into the edit text:
+        EditText enterText = (EditText) findViewById(R.id.EmailEditText);
+        enterText.setText(emailTyped);
+
+        takePictureBtn = (ImageButton) findViewById(R.id.ImageButton);
+        takePictureBtn.setOnClickListener(c -> {
+
+
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
+
         });
-        Log.e(ACTIVITY_NAME, "In function: onCreate"  /* replace with function name */);
+
+        goToChatBtn = (Button)findViewById(R.id.GoToChatBtn);
+        goToChatBtn.setOnClickListener(c -> {
+            Intent goToChatPage = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+
+            startActivityForResult(goToChatPage, 345);
+
+        });
+
+
+        Log.d(ACTIVITY_NAME, "In function: onCreate()");
+
+
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            takePicture.setImageBitmap(imageBitmap);
+            takePictureBtn.setImageBitmap(imageBitmap);
         }
-        Log.e(ACTIVITY_NAME, "In function: onActivityResult"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onActivityResult()");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e(ACTIVITY_NAME, "In function: onStart"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onStart()");
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e(ACTIVITY_NAME, "In function: onResume"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onResume()");
     }
-
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e(ACTIVITY_NAME, "In function: onPause"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onPause()");
     }
-
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e(ACTIVITY_NAME, "In function: onStop"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onStop()");
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e(ACTIVITY_NAME, "In function: onDestroy"  /* replace with function name */);
+        Log.d(ACTIVITY_NAME, "In function: onDestroy()");
     }
 }
