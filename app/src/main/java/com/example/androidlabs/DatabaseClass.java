@@ -7,75 +7,99 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import java.util.Arrays;
+
+
+
 
 public class DatabaseClass extends SQLiteOpenHelper {
 
-    // Main System class Reference Object
-    SQLiteDatabase SQLd;
+    private static final String DB_NAME = "MessagesDB";
+    private static final String DB_TABLE = "Messages_Table";
+    private static final String COL_MESSAGE = "Message";
+    private static final String COL_ISSEND = "IsSend";
+    private static final String COL_MESSAGEID = "MessageID";
+    private static final String CREATE_TABLE = "CREATE TABLE "+DB_TABLE+" ("+COL_MESSAGEID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COL_MESSAGE+" TEXT, "+COL_ISSEND+" BIT);";
 
-    // DATABASE NAME
-    private static final String DATABASE_NAME = "lab5Database";
-
-    //DATABASE VERSION
-    private static final int DATABAS_VERSION = 1;
-
-    // DATABASE TABLE
-    // NOTE: WE CAN HAVE MULTIPLE TABLES,BUT FOR NOW, WE JUST NEED ONE TABLE TO STORE DATA
-    private static final String TABLE_NAME = "messages";
-
-    // COLUMN NAMES
-    public static final String ROW_ID= "id";
-    public static final String SEDN_MSG="sendMsg";
-    public static final String RECEIVE_MSG="receiveMsg";
-
-
-    // THIS IS A CURRENT CLASS CONSTRUCTOR THAT ARE EXPENDING SUPER CLASS PARAMETERS.
     public DatabaseClass(Context context) {
-        super(context, DATABASE_NAME, null, DATABAS_VERSION);
+
+        super(context, DB_NAME, null, 2);
+
     }
 
-
     @Override
+
     public void onCreate(SQLiteDatabase db) {
 
-        // This veriable, CREATE_TABLE, will store the table create query, so that we can use it later to create table.
-        String MESSAGE_CREATE_TABLE = (
-                " CREATE TABLE " + TABLE_NAME +
-                        " ( " + ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                        + SEDN_MSG + " varchar, "
-                        + RECEIVE_MSG + " varchar);");
+        db.execSQL(CREATE_TABLE);
 
-        db.execSQL(MESSAGE_CREATE_TABLE);
     }
 
     @Override
+
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        String MESSGAE_TABLE_DROP = (
-                " DROP TABLE IF EXISTS " + TABLE_NAME
-        );
+        db.execSQL("DROP TABLE IF EXISTS " + DB_TABLE);
 
-        db.execSQL(MESSGAE_TABLE_DROP);
         onCreate(db);
-    }
-
-    public long insertMessage(String sendMessage) {
-
-        // This method allow us permission to store data into database
-        SQLd = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put(SEDN_MSG, sendMessage);
-        return SQLd.insert(TABLE_NAME,null, cv);
 
     }
 
-    // THIS METHOD IS INCOMPLETE //
-    public void printCursor(Cursor c){
+    public boolean insertData(String message, boolean isSend) {
 
-        SQLd = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
 
-        c = SQLd.rawQuery("select * from " + TABLE_NAME,null);
-        Log.d("Cursor Object", DatabaseUtils.dumpCursorToString(c));
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_MESSAGE, message);
+
+        if (isSend)
+
+            contentValues.put(COL_ISSEND, 0);
+
+        else
+
+            contentValues.put(COL_ISSEND, 1);
+
+        long result = db.insert(DB_TABLE, null, contentValues);
+
+
+        return result != -1;
 
     }
+
+
+
+    public Cursor viewData(){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "Select * from "+DB_TABLE;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        Log.e("Database Version Number", Integer.toString(db.getVersion()));
+
+        Log.e("Column Count", Integer.toString(cursor.getColumnCount()));
+
+
+
+        Log.e("Column Names", Arrays.toString(cursor.getColumnNames()));
+
+        Log.e("Row Count", Integer.toString(cursor.getCount()));
+
+        Log.e("Cursor Object", DatabaseUtils.dumpCursorToString(cursor));
+
+        return cursor;
+
+    }
+
+
+
+
+
+
+
+
+
 }

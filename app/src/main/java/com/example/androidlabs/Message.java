@@ -1,41 +1,49 @@
 package com.example.androidlabs;
 
+
 public class Message {
 
-    public long id;
-    public String msg;
-    public boolean isSent;
-    public boolean isReceived;
+
+    String message;
+    private boolean checker;
+    private long id;
 
 
-    public Message(String msg, boolean isSent, boolean isReceived) {
-        this.msg = msg;
-        this.isSent = isSent;
-        this.isReceived = isReceived;
+
+    public Message(String message, boolean checker){
+
+        this.message=message;
+        this.checker=checker;
     }
 
-    public Message() {
+    public Message()
+
+    {
+        this("unknown",false);
     }
 
-    public long getId () {
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public boolean isChecker() {
+        return checker;
+    }
+
+    public void setChecker(boolean checker) {
+        this.checker = checker;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
         return id;
     }
-
-    public void setId (long id) { this.id = id; }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public boolean getisSent() { return isSent; }
-
-    public void setSent(boolean send) { this.isSent = send; }
-
-    public boolean getisReceived() { return isReceived; }
-
-    public void setIsReceived(boolean isReceived) { this.isReceived = isReceived; }
 }
