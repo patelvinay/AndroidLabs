@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         emailEditText = (EditText)findViewById(R.id.EmailEditText);
         sp = getSharedPreferences("email", Context.MODE_PRIVATE);
         login = (Button)findViewById(R.id.loginButton);
+        String savedString = sp.getString("email", "");
+        emailEditText.setText(savedString);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,13 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
         // this was we are saving what user has type.
         // This is similar to Java String = next().
-        typedEmail = emailEditText.getText().toString();
-
-        // This edit.putString() method saves email that is typed by user
-        edit.putString("",typedEmail);
+        String whatWasTyped = emailEditText.getText().toString();
+        edit.putString("email", whatWasTyped);
 
         // It apply changes that are made
-        edit.apply();
+        edit.commit();
 
 
     }
