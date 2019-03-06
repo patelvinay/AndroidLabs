@@ -1,95 +1,112 @@
 package com.example.androidlabs;
 
-
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.graphics.Bitmap;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.provider.MediaStore;
+
+
 
 public class ProfileActivity extends AppCompatActivity {
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    ImageButton takePictureBtn;
-    Button goToChatBtn;
-    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
+    ImageButton mImageButton;
+    Button chatButton;
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // get the intent that got us here
-        Intent loginPage = getIntent();
+        Intent login = getIntent();
 
-        String emailTyped = loginPage.getStringExtra("emailTyped");
+        mImageButton = (ImageButton) findViewById(R.id.profileImageButton);
 
-        //Put the string that was sent from FirstActivity into the edit text:
-        EditText enterText = (EditText) findViewById(R.id.EmailEditText);
+
+        String emailTyped = login.getStringExtra("emailTyped");
+        EditText enterText = (EditText) findViewById(R.id.profileEmailEditText);
         enterText.setText(emailTyped);
 
-        takePictureBtn = (ImageButton) findViewById(R.id.ImageButton);
-        takePictureBtn.setOnClickListener(c -> {
+        mImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
             }
-
         });
+        Log.e(ACTIVITY_NAME,"in function: onCreate()");
 
-        goToChatBtn = (Button)findViewById(R.id.GoToChatBtn);
-        goToChatBtn.setOnClickListener(c -> {
-            Intent goToChatPage = new Intent(ProfileActivity.this, ChatRoomActivity.class);
 
-            startActivityForResult(goToChatPage, 345);
+        // Lab4 ChatButton onClickListener
 
+        chatButton = (Button)findViewById(R.id.chatButton);
+
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent itLab4 = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+                startActivityForResult(itLab4, 345);
+            }
         });
-
-
-        Log.d(ACTIVITY_NAME, "In function: onCreate()");
-
-
     }
+
+    // This will start Android’s Activity that is responsible for the MediaStore.ACTION_IMAGE_CAPTURE intent. Since you are using startActivityForResult( ), the activity will call your onActivityResult(int request, int result, Intent data ) when finished. If you clicked the checkbox button on the camera activity, then result will be Activity.RESULT_OK, and the data parameter will be an intent that has the picture saved under the name “data”:
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            takePictureBtn.setImageBitmap(imageBitmap);
+            mImageButton.setImageBitmap(imageBitmap);
         }
-        Log.d(ACTIVITY_NAME, "In function: onActivityResult()");
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.e(ACTIVITY_NAME,"in function: onStart()");
+
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(ACTIVITY_NAME, "In function: onStart()");
-    }
-    @Override
-    protected void onResume() {
+    protected void onResume(){
         super.onResume();
-        Log.d(ACTIVITY_NAME, "In function: onResume()");
+        Log.e(ACTIVITY_NAME,"in function: onResume()");
+
+
     }
+
     @Override
-    protected void onPause() {
+    protected void onPause(){
         super.onPause();
-        Log.d(ACTIVITY_NAME, "In function: onPause()");
+        Log.e(ACTIVITY_NAME,"in function: onPause()");
+
     }
+
     @Override
-    protected void onStop() {
+    protected void onStop(){
         super.onStop();
-        Log.d(ACTIVITY_NAME, "In function: onStop()");
+        Log.e(ACTIVITY_NAME,"in function: onStop()");
+
     }
+
     @Override
-    protected void onDestroy() {
+    protected void onDestroy(){
         super.onDestroy();
-        Log.d(ACTIVITY_NAME, "In function: onDestroy()");
+        Log.e(ACTIVITY_NAME,"in function: onDestroy()");
+
     }
+
+
+
 }

@@ -9,33 +9,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    EditText emailField;
+    EditText emailEditText;
     SharedPreferences sp;
-    Button loginBtn;
+    String typedEmail;
+    Button login;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emailField = (EditText)findViewById(R.id.Lab3editText2);
-        sp = getSharedPreferences("FileName", Context.MODE_PRIVATE);
-        String savedString = sp.getString("ReserveName", "Default value");
+        emailEditText = (EditText)findViewById(R.id.EmailEditText);
+        sp = getSharedPreferences("email", Context.MODE_PRIVATE);
+        login = (Button)findViewById(R.id.loginButton);
 
-        emailField.setText(savedString);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        loginBtn = (Button)findViewById(R.id.Lab3LoginBtn);
-        loginBtn.setOnClickListener( c -> {
+                Intent it = new Intent(MainActivity.this, ProfileActivity.class);
 
-            Intent profilePage = new Intent(MainActivity.this, ProfileActivity.class);
-            //Give directions to go from this page, to SecondActivity
-            // EditText et = (EditText)findViewById(R.id.Lab3editText2);
+                //EditText et = (EditText)findViewById(R.id.EmailEditText);
 
-            profilePage.putExtra("emailTyped", emailField.getText().toString());
+                it.putExtra("emailTyped", emailEditText.getText().toString());
 
-            //Now make the transition:
-            startActivityForResult( profilePage, 345);
+                startActivityForResult(it, 345);
+            }
         });
     }
 
@@ -43,14 +46,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        //get an editor object
-        SharedPreferences.Editor editor = sp.edit();
+        // This is an editor object
+        SharedPreferences.Editor edit = sp.edit();
 
-        //save what was typed under the name "ReserveName"
-        String whatWasTyped = emailField.getText().toString();
-        editor.putString("ReserveName", whatWasTyped);
 
-        //write it to disk:
-        editor.commit();
+        // this was we are saving what user has type.
+        // This is similar to Java String = next().
+        typedEmail = emailEditText.getText().toString();
+
+        // This edit.putString() method saves email that is typed by user
+        edit.putString("",typedEmail);
+
+        // It apply changes that are made
+        edit.apply();
+
+
     }
 }

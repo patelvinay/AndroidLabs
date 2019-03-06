@@ -1,30 +1,41 @@
 package com.example.androidlabs;
 
 public class Message {
-    public String message;
-    public boolean isSend;
 
-    public Message(String message, boolean isSend) {
-        this.message = message;
-        this.isSend = isSend;
+    public long id;
+    public String msg;
+    public boolean isSent;
+    public boolean isReceived;
+
+
+    public Message(String msg, boolean isSent, boolean isReceived) {
+        this.msg = msg;
+        this.isSent = isSent;
+        this.isReceived = isReceived;
     }
 
     public Message() {
     }
 
-    public String getMessage() {
-        return message;
+    public long getId () {
+        return id;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setId (long id) { this.id = id; }
+
+    public String getMsg() {
+        return msg;
     }
 
-    public boolean isSend() {
-        return isSend;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public void setSend(boolean send) {
-        isSend = send;
-    }
+    public boolean getisSent() { return isSent; }
+
+    public void setSent(boolean send) { this.isSent = send; }
+
+    public boolean getisReceived() { return isReceived; }
+
+    public void setIsReceived(boolean isReceived) { this.isReceived = isReceived; }
 }

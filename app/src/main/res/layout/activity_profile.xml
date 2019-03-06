@@ -1,90 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
 
     <TextView
-        android:id="@+id/ProfileTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ProfileText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"/>
-
-    <TextView
-        android:id="@+id/NameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/NameText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/ProfileTextView"/>
-    <EditText
-        android:id="@+id/NameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/NameHintText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/NameTextView"
-        />
-
-    <TextView
-        android:id="@+id/EmailTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/EmailTextViewText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/NameEditText"/>
-    <EditText
-        android:id="@+id/EmailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/EmailHintText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/EmailTextView"
-        />
-    <TextView
-        android:id="@+id/PictureTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/PictureTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/EmailEditText"/>
-
-    <ImageButton
-        android:id="@+id/ImageButton"
+        android:id="@+id/profileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:src="@android:drawable/picture_frame"
-        android:layout_below="@id/PictureTextView"/>
+        android:text="@string/profile"
+        />
+
     <TextView
-        android:id="@+id/ImagePictureTextView"
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nameTextView"
+        />
+
+    <EditText
+        android:id="@+id/profileNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ImagePictureTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/ImageButton"/>
+        android:hint="@string/name"
+        />
+
+    <TextView
+        android:id="@+id/profileEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emailTextview"
+        />
+
+    <EditText
+        android:id="@+id/profileEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emailHint"
+        android:inputType="textEmailAddress" />
+
+
+    <TextView
+        android:id="@+id/profileProfileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profileTextView"
+        />
+
+    <ImageButton
+        android:id="@+id/profileImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/picture_frame"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pictureText" />
+
 
     <Button
-        android:id="@+id/GoToChatBtn"
+        android:id="@+id/chatButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/GoToChatText"
-        android:layout_below="@id/ImagePictureTextView"/>
+        android:text="@string/chatButtonText"/>
 
 
 
-</RelativeLayout>
+
+</LinearLayout>
