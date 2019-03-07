@@ -9,17 +9,14 @@ public class Message {
     private long id;
 
 
+    public Message(String message, boolean checker) {
 
-    public Message(String message, boolean checker){
-
-        this.message=message;
-        this.checker=checker;
+        this.message = message;
+        this.checker = checker;
     }
 
-    public Message()
-
-    {
-        this("unknown",false);
+    public Message() {
+        this("unknown", false);
     }
 
 
@@ -39,11 +36,11 @@ public class Message {
         this.checker = checker;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

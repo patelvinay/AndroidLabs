@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
     android:layout_height="match_parent">
@@ -12,20 +10,19 @@
 
         android:id="@+id/listChat"
 
-        android:stackFromBottom="true"
-
-        android:transcriptMode="alwaysScroll"
-
-        android:dividerHeight="0dp"
-
-        android:divider="@android:color/transparent"
-
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
 
-        android:layout_above="@+id/buttonSend"/>
+        android:layout_above="@+id/buttonSend"
 
+        android:divider="@android:color/transparent"
+
+        android:dividerHeight="0dp"
+
+        android:stackFromBottom="true"
+
+        android:transcriptMode="alwaysScroll" />
 
 
     <Button
@@ -43,7 +40,6 @@
         android:text="@string/lstViewBtnTextSend" />
 
 
-
     <EditText
 
         android:id="@+id/messageInput"
@@ -54,12 +50,11 @@
 
         android:layout_alignParentBottom="true"
 
-        android:layout_toRightOf="@+id/buttonSend"
-
         android:layout_toLeftOf="@+id/buttonReceive"
 
-        android:hint="@string/lstTextViewHint"/>
+        android:layout_toRightOf="@+id/buttonSend"
 
+        android:hint="@string/lstTextViewHint" />
 
 
     <Button
@@ -74,6 +69,6 @@
 
         android:layout_alignParentBottom="true"
 
-        android:text="@string/lstViewBtnTextReceive"/>
+        android:text="@string/lstViewBtnTextReceive" />
 
 </RelativeLayout>

@@ -7,9 +7,8 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 import java.util.Arrays;
-
-
 
 
 public class DatabaseClass extends SQLiteOpenHelper {
@@ -19,7 +18,7 @@ public class DatabaseClass extends SQLiteOpenHelper {
     private static final String COL_MESSAGE = "Message";
     private static final String COL_ISSEND = "IsSend";
     private static final String COL_MESSAGEID = "MessageID";
-    private static final String CREATE_TABLE = "CREATE TABLE "+DB_TABLE+" ("+COL_MESSAGEID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COL_MESSAGE+" TEXT, "+COL_ISSEND+" BIT);";
+    private static final String CREATE_TABLE = "CREATE TABLE " + DB_TABLE + " (" + COL_MESSAGEID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_MESSAGE + " TEXT, " + COL_ISSEND + " BIT);";
 
     public DatabaseClass(Context context) {
 
@@ -69,19 +68,17 @@ public class DatabaseClass extends SQLiteOpenHelper {
     }
 
 
-
-    public Cursor viewData(){
+    public Cursor viewData() {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String query = "Select * from "+DB_TABLE;
+        String query = "Select * from " + DB_TABLE;
 
         Cursor cursor = db.rawQuery(query, null);
 
         Log.e("Database Version Number", Integer.toString(db.getVersion()));
 
         Log.e("Column Count", Integer.toString(cursor.getColumnCount()));
-
 
 
         Log.e("Column Names", Arrays.toString(cursor.getColumnNames()));
@@ -93,13 +90,6 @@ public class DatabaseClass extends SQLiteOpenHelper {
         return cursor;
 
     }
-
-
-
-
-
-
-
 
 
 }

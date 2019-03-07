@@ -9,29 +9,25 @@
         android:id="@+id/profileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profile"
-        />
+        android:text="@string/profile" />
 
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nameTextView"
-        />
+        android:text="@string/nameTextView" />
 
     <EditText
         android:id="@+id/profileNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/name"
-        />
+        android:hint="@string/name" />
 
     <TextView
         android:id="@+id/profileEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/emailTextview"
-        />
+        android:text="@string/emailTextview" />
 
     <EditText
         android:id="@+id/profileEmailEditText"
@@ -45,15 +41,13 @@
         android:id="@+id/profileProfileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profileTextView"
-        />
+        android:text="@string/profileTextView" />
 
     <ImageButton
         android:id="@+id/profileImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/picture_frame"
-        />
+        android:src="@android:drawable/picture_frame" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,9 +59,13 @@
         android:id="@+id/chatButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/chatButtonText"/>
+        android:text="@string/chatButtonText" />
 
-
+    <Button
+        android:id="@+id/goToToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/goToToolbar" />
 
 
 </LinearLayout>

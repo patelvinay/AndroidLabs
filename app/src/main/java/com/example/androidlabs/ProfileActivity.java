@@ -2,9 +2,9 @@ package com.example.androidlabs;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +12,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 
-
 public class ProfileActivity extends AppCompatActivity {
 
+    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageButton mImageButton;
     Button chatButton;
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +43,12 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             }
         });
-        Log.e(ACTIVITY_NAME,"in function: onCreate()");
+        Log.e(ACTIVITY_NAME, "in function: onCreate()");
 
 
         // Lab4 ChatButton onClickListener
 
-        chatButton = (Button)findViewById(R.id.chatButton);
+        chatButton = (Button) findViewById(R.id.chatButton);
 
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +58,15 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivityForResult(itLab4, 345);
             }
         });
+
+        Button goToToolbar = findViewById(R.id.goToToolbar);
+        goToToolbar.setOnClickListener(e->{
+            Intent intent = new Intent(ProfileActivity.this, TestToolbar.class);
+            startActivity(intent);
+        });
+
     }
+
 
     // This will start Android’s Activity that is responsible for the MediaStore.ACTION_IMAGE_CAPTURE intent. Since you are using startActivityForResult( ), the activity will call your onActivityResult(int request, int result, Intent data ) when finished. If you clicked the checkbox button on the camera activity, then result will be Activity.RESULT_OK, and the data parameter will be an intent that has the picture saved under the name “data”:
 
@@ -71,42 +78,42 @@ public class ProfileActivity extends AppCompatActivity {
             mImageButton.setImageBitmap(imageBitmap);
         }
     }
+
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        Log.e(ACTIVITY_NAME,"in function: onStart()");
+        Log.e(ACTIVITY_NAME, "in function: onStart()");
 
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
-        Log.e(ACTIVITY_NAME,"in function: onResume()");
+        Log.e(ACTIVITY_NAME, "in function: onResume()");
 
 
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
-        Log.e(ACTIVITY_NAME,"in function: onPause()");
+        Log.e(ACTIVITY_NAME, "in function: onPause()");
 
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
-        Log.e(ACTIVITY_NAME,"in function: onStop()");
+        Log.e(ACTIVITY_NAME, "in function: onStop()");
 
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
-        Log.e(ACTIVITY_NAME,"in function: onDestroy()");
+        Log.e(ACTIVITY_NAME, "in function: onDestroy()");
 
     }
-
 
 
 }
