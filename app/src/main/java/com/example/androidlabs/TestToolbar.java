@@ -1,12 +1,11 @@
 package com.example.androidlabs;
 
 
-import android.content.ClipData;
 import android.content.DialogInterface;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,12 +14,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import android.support.design.widget.Snackbar;
 
 public class TestToolbar extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar myToolbar;
     String newMessage = "This is the initial message";
+    String overflowToast = "You clicked on the overflow menu";
     Toolbar myToolBar;
 
     @Override
@@ -34,12 +34,14 @@ public class TestToolbar extends AppCompatActivity {
 
     }
 
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-
         return true;
     }
 
@@ -59,7 +61,7 @@ public class TestToolbar extends AppCompatActivity {
                 sb.show();
                 break;
             case R.id.item4:
-                Toast.makeText(this, "You clicked on the overflow menu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, overflowToast, Toast.LENGTH_LONG).show();
                 break;
         }
 
