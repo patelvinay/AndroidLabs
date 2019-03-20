@@ -29,5 +29,12 @@
     <string name="item1Toast">You clicked on the overflow menu</string>
     <string name="item3Toast">This is the initial message</string>
 
+    //lab7
+    <string name="GoToWeather">Go to Weather page</string>
+    <string name="currentTemp">Current Temperature</string>
+    <string name="minTemp">Minimum Temperature</string>
+    <string name="maxTemp">Maximum Temperature</string>
+    <string name="uvRating">UV</string>
+
 
 </resources>

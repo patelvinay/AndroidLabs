@@ -65,7 +65,19 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Button goToWeatherBtn = (Button)findViewById(R.id.GoToWeather);
+        goToWeatherBtn.setOnClickListener(c -> {
+            Intent goToMenuPage = new Intent(ProfileActivity.this, WeatherForecast.class);
+
+            startActivityForResult(goToMenuPage, 234);
+
+        });
+
+        Log.d(ACTIVITY_NAME, "In function: onCreate()");
+
     }
+
+
 
 
     // This will start Android’s Activity that is responsible for the MediaStore.ACTION_IMAGE_CAPTURE intent. Since you are using startActivityForResult( ), the activity will call your onActivityResult(int request, int result, Intent data ) when finished. If you clicked the checkbox button on the camera activity, then result will be Activity.RESULT_OK, and the data parameter will be an intent that has the picture saved under the name “data”:

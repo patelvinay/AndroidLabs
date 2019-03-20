@@ -30,4 +30,7 @@
     <string name="newMessageTV">What is your new message?</string>
     <string name="item1Toast">You clicked on the overflow menu</string>
     <string name="item3Toast">This is the initial message</string>
+
+    //lab7
+    <string name="GoToWeather">Go to Weather page</string>
 </resources>
