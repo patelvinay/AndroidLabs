@@ -14,6 +14,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".fragment"></activity>
+        <activity android:name=".MessageDetail" />
         <activity android:name=".WeatherForecast"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

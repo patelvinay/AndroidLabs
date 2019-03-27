@@ -33,4 +33,11 @@
 
     //lab7
     <string name="GoToWeather">Go to Weather page</string>
+    <string name="currentTemp">Current Temperature</string>
+    <string name="minTemp">Minimum Temperature</string>
+    <string name="maxTemp">Maximum Temperature</string>
+    <string name="uvRating">UV</string>
+
+    //lab8
+    <string name="messageDelete">Delete this message</string>
 </resources>

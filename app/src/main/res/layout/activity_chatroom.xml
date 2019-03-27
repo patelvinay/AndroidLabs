@@ -1,74 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context=".ChatRoomActivity">
 
     <ListView
-
-        android:id="@+id/listChat"
-
+        android:id="@+id/theList"
         android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/theList">
 
-        android:layout_above="@+id/buttonSend"
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="sendMessage"
+            android:text="@string/lstViewBtnTextSend" />
 
-        android:divider="@android:color/transparent"
+        <EditText
+            android:id="@+id/messageTyped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="11"
+            android:hint="@string/type_here"
+            android:inputType=""
+            android:selectAllOnFocus="false"
+            tools:text="@string/type_here" />
 
-        android:dividerHeight="0dp"
-
-        android:stackFromBottom="true"
-
-        android:transcriptMode="alwaysScroll" />
-
-
-    <Button
-
-        android:id="@+id/buttonSend"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentLeft="true"
-
-        android:layout_alignParentBottom="true"
-
-        android:text="@string/lstViewBtnTextSend" />
-
-
-    <EditText
-
-        android:id="@+id/messageInput"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-
-        android:layout_toLeftOf="@+id/buttonReceive"
-
-        android:layout_toRightOf="@+id/buttonSend"
-
-        android:hint="@string/lstTextViewHint" />
+        <Button
+            android:id="@+id/receiveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="receiveMessage"
+            android:text="@string/lstViewBtnTextReceive" />
+    </LinearLayout>
 
 
-    <Button
-
-        android:id="@+id/buttonReceive"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentRight="true"
-
-        android:layout_alignParentBottom="true"
-
-        android:text="@string/lstViewBtnTextReceive" />
-
-</RelativeLayout>
+</LinearLayout>

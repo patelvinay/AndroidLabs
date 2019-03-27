@@ -6,31 +6,31 @@
 
 
     <TextView
-        android:id="@+id/profileTextView"
+        android:id="@+id/profileTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/profile" />
 
     <TextView
-        android:id="@+id/nameTextView"
+        android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nameTextView" />
 
     <EditText
-        android:id="@+id/profileNameEditText"
+        android:id="@+id/NameET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name" />
 
     <TextView
-        android:id="@+id/profileEmailTextView"
+        android:id="@+id/emailTV2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/emailTextview" />
 
     <EditText
-        android:id="@+id/profileEmailEditText"
+        android:id="@+id/emailET2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/emailHint"
@@ -38,25 +38,26 @@
 
 
     <TextView
-        android:id="@+id/profileProfileTextView"
+        android:id="@+id/pictureTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/profileTextView" />
 
     <ImageButton
-        android:id="@+id/profileImageButton"
+        android:id="@+id/mImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@android:drawable/picture_frame" />
 
     <TextView
+        android:id="@+id/takepicTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pictureText" />
 
 
     <Button
-        android:id="@+id/chatButton"
+        android:id="@+id/chatBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/chatButtonText" />
@@ -68,7 +69,7 @@
         android:text="@string/goToToolbar" />
 
     <Button
-        android:id="@+id/GoToWeather"
+        android:id="@+id/weatherBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

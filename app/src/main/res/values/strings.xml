@@ -36,5 +36,8 @@
     <string name="maxTemp">Maximum Temperature</string>
     <string name="uvRating">UV</string>
 
+    //lab8
+    <string name="messageDelete">Delete this message</string>
+
 
 </resources>
