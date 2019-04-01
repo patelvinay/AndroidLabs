@@ -1,45 +1,43 @@
 package com.example.androidlabs;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.widget.Button;
 import android.widget.EditText;
 
+public class MainActivity extends Activity {
 
-public class MainActivity extends AppCompatActivity {
-
-    EditText emailEditText;
-    SharedPreferences sp;
-    String typedEmail;
-    Button login;
-
-
+    EditText editText1;
+    Button loginButton;
+    String email;
+    SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_lab3layout);
+        editText1 = findViewById(R.id.editText1);
 
-        emailEditText = (EditText) findViewById(R.id.EmailEditText);
-        sp = getSharedPreferences("email", Context.MODE_PRIVATE);
-        login = (Button) findViewById(R.id.loginButton);
-        String savedString = sp.getString("email", "");
-        emailEditText.setText(savedString);
+        prefs = getSharedPreferences("name", Context.MODE_PRIVATE);
+         String userName = prefs.getString("defaultEmail","");
+        editText1.setText(userName);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        loginButton = (Button)findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent it = new Intent(MainActivity.this, ProfileActivity.class);
-
-                //EditText et = (EditText)findViewById(R.id.EmailEditText);
-
-                it.putExtra("emailTyped", emailEditText.getText().toString());
-
-                startActivityForResult(it, 345);
+                it.putExtra("defaultEmail",editText1.getText().toString());
+                startActivity(it);
             }
         });
     }
@@ -48,18 +46,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        // This is an editor object
-        SharedPreferences.Editor edit = sp.edit();
+        SharedPreferences.Editor edit = prefs.edit();
 
+        email = editText1.getText().toString();
 
-        // this was we are saving what user has type.
-        // This is similar to Java String = next().
-        String whatWasTyped = emailEditText.getText().toString();
-        edit.putString("email", whatWasTyped);
+        edit.putString("defaultEmail",email);
 
-        // It apply changes that are made
-        edit.commit();
-
-
+        edit.apply();
     }
 }

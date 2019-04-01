@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherForecast">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageViewWeather"/>
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".WeatherForecast">
+        android:layout_height="wrap_content"
+        android:id="@+id/textTemperature"
+        android:layout_below="@+id/imageViewWeather"
+        android:layout_margin="10dp"
+        android:text="@string/textTemperature"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMinTemperature"
+        android:layout_below="@+id/textTemperature"
+        android:layout_margin="10dp"
+        android:text="@string/textMinTemperature"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMaxTemperature"
+        android:layout_below="@+id/textMinTemperature"
+        android:layout_margin="10dp"
+        android:text="@string/textMaxTemperature"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textUVRating"
+        android:layout_below="@+id/textMaxTemperature"
+        android:layout_margin="10dp"
+        android:text="@string/textUVRating"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textWindSpeed"
+        android:layout_below="@+id/textUVRating"
+        android:layout_margin="10dp"
+        android:text="@string/textWindSpeed"/>
+    <ProgressBar
+        android:id="@+id/progressWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="invisible"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textWindSpeed"/>
 
-
-        <ImageView
-            android:id="@+id/weatherImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"/>
-
-        <TextView
-            android:id="@+id/currentTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/weatherImage"
-            android:layout_alignParentLeft="true"
-            android:text="@string/currentTemp"/>
-        <TextView
-            android:id="@+id/minTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/currentTemp"
-            android:layout_alignParentLeft="true"
-            android:text="@string/minTemp"/>
-        <TextView
-            android:id="@+id/maxTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/minTemp"
-            android:layout_alignParentLeft="true"
-            android:text="@string/maxTemp"/>
-        <TextView
-            android:id="@+id/uvRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/maxTemp"
-            android:layout_alignParentLeft="true"
-            android:text="@string/uvRating"/>
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"/>
-    </RelativeLayout>
+</RelativeLayout>

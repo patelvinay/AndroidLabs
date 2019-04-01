@@ -1,43 +1,32 @@
 <resources>
-
     <string name="app_name">AndroidLabs</string>
-    // Lab3 Strings
-    <string name="EmailtextView"> Enter Your Email Address: </string>
-    <string name="emailHint">Type your email here </string>
-    <string name="PasswordTextView">Type your password </string>
-    <string name="loginButton">Login</string>
-
-
-    //ProfitActivity Strings
-    <string name="profile">Your Profile</string>
-    <string name="nameTextView">Your Name</string>
-    <string name="name">Enter Your Name</string>
-    <string name="emailTextview">Your Email</string>
-    <string name="profileTextView">Your Picture</string>
-    <string name="pictureText">click the button above to take a picture</string>
-
-    //Lab4 Strings and Lab5
+    <string name="hello_Message">Hello World!!!</string>
+    <!--string name="ButtonText">I\'m a button</string-->
+    <string name="StringText">Here are my widgets</string>
+    <string name="ButtonText">Button</string>
+    <string name="Checkbox">Check this out</string>
+    <string name="SwitchText">Switch on/off</string>
+    <string name="editText">Type your answer here</string>
+    <string name="textView1">Enter your Email Address:</string>
+    <string name="textView2">Type your password:</string>
+    <string name="editView1">Type email here</string>
+    <string name="button1">LOGIN</string>
+    <string name="pfText1">Your Profile</string>
+    <string name="pfText2">Your name:</string>
+    <string name="pfText3">Your email:</string>
+    <string name="pfText4">Your picture:</string>
+    <string name="pfText5">Click the button above to take a picture</string>
+    <string name="pfEdit1">Enter your name</string>
+    <string name="pfEdit2">Enter your email</string>
     <string name="chatButtonText">Go to Chat</string>
-    <string name="lstViewBtnTextSend">Send</string>
+    <string name="lstViewBtnTextSend">SEND</string>
     <string name="lstTextViewHint">Type Here</string>
-    <string name="lstViewBtnTextReceive">Receive</string>
-
-
-
-    //Lab6
-    <string name="type_here">type here</string>
-    <string name="goToToolbar">Go To Toolbar</string>
-    <string name="newMessageTV">What is your new message?</string>
-    <string name="item1Toast">You clicked on the overflow menu</string>
-    <string name="item3Toast">This is the initial message</string>
-
-    //lab7
-    <string name="GoToWeather">Go to Weather page</string>
-    <string name="currentTemp">Current Temperature</string>
-    <string name="minTemp">Minimum Temperature</string>
-    <string name="maxTemp">Maximum Temperature</string>
-    <string name="uvRating">UV</string>
-
-    //lab8
-    <string name="messageDelete">Delete this message</string>
+    <string name="lstViewBtnTextReceive">RECEIVE</string>
+    <string name="toolButton">Go to toolbar page</string>
+    <string name="weatherForecastButton">Go to Weather Forecast</string>
+    <string name="textTemperature">Current Temperature</string>
+    <string name="textMinTemperature">Min Temperature</string>
+    <string name="textMaxTemperature">Max Temperature</string>
+    <string name="textUVRating">UV rating</string>
+    <string name="textWindSpeed">WindSpeed</string>
 </resources>

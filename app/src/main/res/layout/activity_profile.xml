@@ -1,82 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-
     <TextView
-        android:id="@+id/profileTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile" />
-
-    <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nameTextView" />
-
-    <EditText
-        android:id="@+id/NameET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/name" />
-
+        android:text="@string/pfText1"
+        />
     <TextView
-        android:id="@+id/emailTV2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/emailTextview" />
-
-    <EditText
-        android:id="@+id/emailET2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/emailHint"
-        android:inputType="textEmailAddress" />
-
-
-    <TextView
-        android:id="@+id/pictureTV"
-        android:layout_width="wrap_content"
+        android:text="@string/pfText2"/>
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/profileTextView" />
-
+        android:hint="@string/pfEdit1"
+        android:id="@+id/editText3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pfText3"/>
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pfEdit2"
+        android:inputType="textEmailAddress"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pfText4"/>
     <ImageButton
-        android:id="@+id/mImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/picture_frame" />
-
+        android:id="@+id/imageButton"
+        android:src="@android:drawable/picture_frame"/>
     <TextView
-        android:id="@+id/takepicTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pictureText" />
-
-
-    <Button
-        android:id="@+id/chatBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/chatButtonText" />
-
+        android:text="@string/pfText5"/>
     <Button
-        android:id="@+id/goToToolbar"
+        android:id="@+id/chatButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/goToToolbar" />
-
+        android:text="@string/chatButtonText"/>
     <Button
-        android:id="@+id/weatherBtn"
+        android:id="@+id/toolButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/GoToWeather"
-        android:layout_below="@id/goToToolbar"/>
-
-
-
+        android:text="@string/toolButton"/>
+    <Button
+        android:id="@+id/weatherForecastButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/weatherForecastButton"/>
 </LinearLayout>
